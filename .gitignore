@@ -2,6 +2,9 @@
 .env
 run.bat
 
+*.scss.css
+*.scss.css.map
+
 *.pyc
 __pycache__/
 
