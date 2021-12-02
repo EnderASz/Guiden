@@ -6,6 +6,7 @@ from flask import Flask
 from sassutils.wsgi import SassMiddleware
 
 from .default_configs import Config, DevelopmentConfig
+from . import mongo
 
 
 def create_app():
@@ -28,4 +29,5 @@ def create_app():
             }
         )
 
+    mongo.init(app)
     return app
