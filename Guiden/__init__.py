@@ -24,7 +24,7 @@ def create_app():
         app.wsgi_app = SassMiddleware(
             app.wsgi_app,
             {
-                'Guiden': ('static/scss', 'static/css', '/static/css'),
+                'Guiden': ('static/scss', 'static/css', '/static/css', False),
             }
         )
 
