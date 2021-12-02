@@ -1,6 +1,7 @@
 .venv/
 .env
-run.bat
+config.py
+run.*
 
 *.scss.css
 *.scss.css.map
