@@ -8,6 +8,8 @@ from sassutils.wsgi import SassMiddleware
 from .default_configs import Config, DevelopmentConfig
 from . import mongo
 
+from .subapps import home_subapp
+
 
 def create_app():
     app = Flask(__name__)
@@ -30,4 +32,7 @@ def create_app():
         )
 
     mongo.init(app)
+
+    app.register_blueprint(home_subapp, url_prefix="/")
+
     return app
