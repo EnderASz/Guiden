@@ -22,54 +22,28 @@
 4. Go to [Configuration](#Configuration) and configure application via environment variables (and/or by creating `.env` file) or in config file setted by `GUIDEN_CFG` enviroment variable.
 
 ## Configuration
-### Which configuration are required?
-- `FLASK_RUN_PORT`
-- `FLASK_RUN_HOST`
-- `FLASK_ENV`
-- `FLASK_APP`
-- `SECRET_KEY` - Recommended in production for safety reasons
 ### Enviroment variables only configuration
 Entire configuration below you can do only by creating and modifying below environment
 variables or putting them into `.env` file.
-
-- `FLASK_RUN_PORT = <port>`
-    <br>(Optional) [[default: `5000`]]
-    <br>Port from which you want to starts app
-
-- `FLASK_RUN_HOST = <host>`
-    <br>(Optional) [[default: `127.0.0.1`]]
-    <br>Host from which you want to starts app
-
-- `FLASK_ENV = <development/production>`
-    <br>(Optional) [[default: `production`]]
-    <br>In development process (only) you want set this to "development"
-
-- `FLASK_APP = FoodChainAPI`
-    <br>**Required if you running app by `'flask run'` command**
-    <br>App main package. If you need to modify this value, that means you
-    propably changed something for your own risk.
-
-- `GUIDEN_CFG = <Configuration file path>`
+|Variable name|Default value|Optional|Description|
+|-------------|-------------|--------|-----------|
+|FLASK_RUN_PORT|`5000`|:white_check_mark:|Port from which you want to publish app|
+|FLASK_RUN_HOST|`localhost`|:white_check_mark:|Host address from which you want to starts app|
+|FLASK_ENV|`production`|:white_check_mark:|In development process (only) probably you want set this to `development`. In production it's recommended to set this to `production`.
+|FLASK_APP|:heavy_minus_sign:|If you running app by `flask run`|That should be set to `Guiden` - Application main package
+|GUIDEN_CFG|:heavy_minus_sign:|:white_check_mark:|Application configuration file path
 
 ### Other configuration options
+|Variable name|Default value|Optional|Description|
+|-------------|-------------|--------|-----------|
+|SECRET_KEY|By default application use constant predefined key|:white_check_mark:|Secret Key for application instance.<br>**In production we recommend to provide it and keep it in secret.**
+|MONGO_HOST|`localhost`|:x:|Database server host address|
+|MONGO_PORT|`27017`|:x:|Database server port number|
+|MONGO_USER|:heavy_minus_sign:|:white_check_mark:|Database server authentication username|
+|MONGO_PASS|:heavy_minus_sign:|:white_check_mark:|Database server authentication password|
+|MONGO_DBNAME|`Guiden`|:x:|Uses database name|
+|MONGO_OPTS|:heavy_minus_sign:|:white_check_mark:|Database server connection options|
 
-- `SECRET_KEY = "<Random secret key>"`
-    <br>**(Optional)** [*By default application use constant predefined key*]
-    <br>Secret Key for application instance. **In production we recommend to provide it and keep it in secret.**
-    <br>**It's recommended to set this value via environment variables instead of config file.**
-
-- `MONGO_HOST = "<Database connection host address>"`
-    **(Optional)** <br>[*Default: "localhost"*]
-- `MONGO_PORT = "<Database connection port>"`
-    **(Optional)** <br>[*Default: "27017"*]
-- `MONGO_USER = "<Database authentication username>"`
-    **(Optional)**
-- `MONGO_PASS = "<Database authentication password>"`
-    **(Optional)**
-- `MONGO_DBNAME = "<Database name>`
-    **(Optional)** <br>[*Default: "Guiden"*]
-- `MONGO_OPTS = "<Database connection options>`
-    **(Optional)**
 ## Run in development
 Simply just run command below in main repository location
 
