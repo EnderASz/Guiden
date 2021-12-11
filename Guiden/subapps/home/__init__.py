@@ -1,5 +1,6 @@
-from flask import Blueprint, render_template
+from flask import Blueprint
 
+from .views import home as home_view
 
 home_blueprint = Blueprint(
     "home",
@@ -7,7 +8,5 @@ home_blueprint = Blueprint(
     template_folder="templates")
 
 
-@home_blueprint.route('/')
-@home_blueprint.route('/home')
-def home():
-    return render_template("home.j2")
+home_blueprint.add_url_rule('/', view_func=home_view)
+home_blueprint.add_url_rule('/home', view_func=home_view)
