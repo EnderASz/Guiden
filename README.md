@@ -11,9 +11,9 @@
 
 ## Basic instalation
 1. Clone this repository:
-`git clone https://github.com/tlendev/foodchain-api.git`
+`git clone https://github.com/EnderASz/Guiden.git`
 
-2. Enter into cloned repository directory (usually by `cd foodchain-api`)
+2. Enter into cloned repository directory (usually by `cd Guiden`)
 
 - If you want to use virtual environment activate it before steps below
 
