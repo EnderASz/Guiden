@@ -89,3 +89,6 @@ That command should show you a table design like the one below:
 |`home.home`|`GET`|`/home`|
 |`home.home`|`GET`|`/`|
 |...|...|...
+
+## Application structure and functionality documentation
+Application structure and functionality documentation is available [here](./Guiden/Guiden.md).
