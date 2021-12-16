@@ -31,7 +31,8 @@ def create_app():
             }
         )
 
+    mongo.init(app)
+
     app.register_blueprint(subapps_blueprint)
 
-    mongo.init(app)
     return app
