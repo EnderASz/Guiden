@@ -15,4 +15,5 @@ class Config:
 
 
 class DevelopmentConfig(Config):
-    pass
+    TEMPLATES_AUTO_RELOAD = True
+
