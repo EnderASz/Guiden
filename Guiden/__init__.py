@@ -8,6 +8,8 @@ from sassutils.wsgi import SassMiddleware
 from .default_configs import Config, DevelopmentConfig
 from . import mongo
 
+from .subapps import subapps_blueprint
+
 
 def create_app():
     app = Flask(__name__)
@@ -28,6 +30,8 @@ def create_app():
                 'Guiden': ('static/scss', 'static/css', '/static/css', False),
             }
         )
+
+    app.register_blueprint(subapps_blueprint)
 
     mongo.init(app)
     return app
