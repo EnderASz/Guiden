@@ -1,3 +1,11 @@
-from . home import home_blueprint as home_subapp
+from flask import Blueprint
 
-__all__ = ['home_subapp', ]
+from . import home
+
+subapps_blueprint = Blueprint('', __name__)
+
+subapps_blueprint.register_blueprint(home.home_blueprint)
+
+__all__ = [
+    "home",
+]

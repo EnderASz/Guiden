@@ -8,7 +8,7 @@ from sassutils.wsgi import SassMiddleware
 from .default_configs import Config, DevelopmentConfig
 from . import mongo
 
-from .subapps import home_subapp
+from .subapps import subapps_blueprint
 
 
 def create_app():
@@ -33,6 +33,6 @@ def create_app():
 
     mongo.init(app)
 
-    app.register_blueprint(home_subapp, url_prefix="/")
+    app.register_blueprint(subapps_blueprint)
 
     return app
