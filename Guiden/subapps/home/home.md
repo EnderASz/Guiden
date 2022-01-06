@@ -5,7 +5,7 @@
 - `\templates` - Contains templates for `home` subapplication.
 
 ## Endpoints
-All endpoints name for this application starts with `home.*`. For example below endpoints names would look like `.endpoint_name` and that means the full endpoint name is `home.endpoint_name`.
+All endpoint names for this application starts with `home.*`. For example below endpoint names would look like `.endpoint_name` and that means the full endpoint name is `home.endpoint_name`.
 <table>
     <thead>
         <tr>
