@@ -1,10 +1,10 @@
 # Guiden main app documentation
 ## Files and directories
 - `__init__.py` - Initialize application. It's mainly responsible for:
-    + load default and custom configuration
-    + apply needed middleware
-    + prepare connection with database server for work
-    + register subapplications
+    + loading default and custom configuration
+    + applying needed middleware
+    + preparing connection with database server for work
+    + registering subapplications
 - `default_configs.py` - Contains default configurations like:
     + `Config` - Standard configuration
     + `DevelopmentConfiguration` - Configuration for development purpose
