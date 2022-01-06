@@ -23,7 +23,7 @@
 
 ## Configuration
 ### Enviroment variables only configuration
-Entire configuration below you can do only by creating and modifying below environment
+Entire configuration below can be done only by creating and modifying below environment
 variables or putting them into `.env` file.
 |Variable name|Default value|Optional|Description|
 |-------------|-------------|--------|-----------|
@@ -45,9 +45,7 @@ variables or putting them into `.env` file.
 |MONGO_OPTS|:heavy_minus_sign:|:white_check_mark:|Database server connection options|
 
 ## Run in development
-Simply just run command below in main repository location
-
-### Method A - By `flask` command
+Simply just run command below in the main repository location
 ```bash
 flask run
 ```
@@ -58,7 +56,7 @@ For now, try to guide with
 
 Propably in the future we will provide support and own guide for this.
 
-If you need to import main flask app file into wsgi probably it would be this
+If you need to import main flask app file into WSGI probably it would be this
 same package, which is pointed by `FLASK_APP` enviroment variable.
 
 ## CLI commands
