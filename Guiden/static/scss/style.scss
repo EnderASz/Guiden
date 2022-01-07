@@ -1,0 +1,51 @@
+$main-color: #53006e;
+$secondary-color: #AC0282;
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', 'sans-serif';
+    background: linear-gradient(to right, $secondary-color, $main-color, $secondary-color);
+}
+
+
+nav{
+    height: 8vh;
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 12%, rgba(0,0,0,0.5) 18%, rgba(0,0,0,0.55) 100%);
+    display: flex;
+    direction: row;
+    justify-content: space-between;
+    
+    >div{
+        background-color: green;
+        display: flex;
+        justify-content: center;
+        width: 15%;
+        position: relative;
+        
+
+        span, img {
+            transition: 0.6s;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        
+        span{
+            margin: auto;
+            color: white;
+            font-size: 1.5rem;
+            &:hover{
+                font-size: 1.8rem;
+            }
+        }
+
+        img{
+            max-height: 70%;
+            margin: auto;
+            &:hover{
+                max-height: 90%;
+            }
+        }
+    }
+}

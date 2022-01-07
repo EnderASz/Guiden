@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    {% include "fonts.j2" %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.scss.css') }}">
     {% block app_specific_styling %}{% endblock %}
     {% block page_specific_styling %}{% endblock %}
@@ -19,6 +23,8 @@
 </head>
 <body>
     {% include 'nav.j2' %}
-    {% block content %}{% endblock content %}
+    {% block content %}
+
+    {% endblock content %}
 </body>
 </html>
