@@ -11,13 +11,10 @@ divs.forEach((e)=>{
         e.querySelector(`span`).addEventListener(`mouseout`, ()=>{
             e.querySelector(`div`).classList.remove(`nav-animation`);
         });
-            
+
     } catch (error) {
         if(error instanceof TypeError){
             console.log(`skipping logo....`);
         }
     }
-
-    
-
 });

@@ -6,6 +6,9 @@ run.*
 *.scss.css
 *.scss.css.map
 
+*.js
+*.js.map
+
 *.pyc
 __pycache__/
 
