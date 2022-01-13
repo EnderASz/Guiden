@@ -3,18 +3,13 @@ const divs = document.querySelectorAll(`nav > div`);
 console.log(divs);
 
 divs.forEach((e)=>{
-    try {
-        e.querySelector(`span`).addEventListener(`mouseover`, ()=>{
-            e.querySelector(`div`).classList.add(`nav-animation`);
-        });
+    const span = e.querySelector(`span`);
+    const underline = e.querySelector(`div`);
 
-        e.querySelector(`span`).addEventListener(`mouseout`, ()=>{
-            e.querySelector(`div`).classList.remove(`nav-animation`);
-        });
-
-    } catch (error) {
-        if(error instanceof TypeError){
-            console.log(`skipping logo....`);
-        }
-    }
+    span?.addEventListener(`mouseover`, ()=>{
+        underline?.classList.add(`nav-animation`);
+    });
+    span?.addEventListener(`mouseout`, ()=>{
+        underline?.classList.remove(`nav-animation`);
+    });
 });
