@@ -1,15 +1,15 @@
-const divs = document.querySelectorAll(`nav > div`);
+const divs = document.querySelectorAll(`nav > div.opt`);
 
 console.log(divs);
 
 divs.forEach((e)=>{
-    const span = e.querySelector(`span`);
-    const underline = e.querySelector(`div`);
+    const text = e.querySelector(`a`);
+    const underline = e.querySelector(`.underline`);
 
-    span?.addEventListener(`mouseover`, ()=>{
+    text?.addEventListener(`mouseover`, ()=>{
         underline?.classList.add(`nav-animation`);
     });
-    span?.addEventListener(`mouseout`, ()=>{
+    text?.addEventListener(`mouseout`, ()=>{
         underline?.classList.remove(`nav-animation`);
     });
 });

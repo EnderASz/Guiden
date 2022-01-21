@@ -1,27 +1,29 @@
 {# Navigation template #}
 <nav>
     <div class="opt">
-        <span>Home</span>
+        <a class="" href="">Home</a>
         <div class="underline"></div>
     </div>
 
     <div class="opt">
-        <span>Genres</span>
+        <a href="">Genres</a>
         <div class="underline"></div>
     </div>
 
     <div class="logo">
-        <img src="{{url_for('static', filename='img/logo.svg')}}">
         <div class="img-background"></div>
+        <a href="{{url_for('home.home')}}">
+            <img src="{{url_for('static', filename='img/logo.svg')}}">
+        </a>
     </div>
 
     <div class="opt">
-        <span>Search</span>
+        <a href="">Search</a>
         <div class="underline"></div>
     </div>
 
     <div class="opt">
-        <span>Log In</span>
+        <a href="">Log In</a>
         <div class="underline"></div>
     </div>
 </nav>

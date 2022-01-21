@@ -6,34 +6,21 @@ nav{
 
     display: flex;
     position: relative;
-    z-index: 9;
     height: $nav-height;
     margin-bottom: $nav-height + 1vh;
     justify-content: space-around;
     background-color: $main-dark-color;
-    &::before {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-        background: transparent;
-        content: "";
-        box-shadow: 3px 8px 10px 0px #{$main-dark-color};
-    }
+    box-shadow: 3px 8px 10px 0px #{$main-dark-color};
 
     >div{
         width: 15%;
         height: 100%;
         position: relative;
         justify-content: center;
-        z-index: 99;
 
         &.logo{
             .img-background {
                 position: absolute;
-                z-index: 999;
                 top: 100%;
                 left: 50%;
                 width: $nav-height * 2;
@@ -44,38 +31,31 @@ nav{
                 background-color: #{$main-dark-color};
                 box-shadow: 0px 8px 10px 0px #{$main-dark-color};
             }
-            img {
-                z-index: 9999;
+
+            a {
+                top: 100%;
+                height: 120%;
+                &:hover{
+                    height: 140%;
+                }
+
+                img {
+                    height: 100%;
+                }
             }
         }
 
-        span, img{
+        a{
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            transition: ease-in-out 0.4s;
-            &:hover{
-                // Could be useless if link will be used;
-                cursor: pointer;
-            }
-        }
-
-        span{
             margin: auto;
+            transform: translate(-50%, -50%);
+            transition: font-size ease-in-out 0.4s, height ease-in-out 0.4s;
             font-size: 3vh;
+            text-decoration: none;
             &:hover{
                 font-size: 3.6vh;
-            }
-        }
-
-        img{
-            position: absolute;
-            top: 100%;
-            height: 120%;
-            margin: auto;
-            &:hover{
-                height: 140%;
             }
         }
 
