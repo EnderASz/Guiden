@@ -4,9 +4,29 @@
 
 {# Here put any page specific css styling #}
 {% block page_specific_styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.scss.css')}}">
 {% endblock page_specific_styling %}
 
 {# Here put page content #}
 {% block content %}
 {% include "components/header.j2" %}
+<main>
+    <section class="news">
+        <h2>News</h2>
+        <article class="news">
+        <div class="wrapper container">
+            <div class="message-box"></div>
+        </div>
+        <img src="" class="btn left">
+        <img src="" class="btn right">
+        </article>
+        <article class="premieres">
+            <h3>Premieres</h3>
+            <div class="wrapper">
+                <img src="" class="btn left">
+                <img src="" class="btn right">
+            </div>
+        </article>
+    </section>
+</main>
 {% endblock content %}

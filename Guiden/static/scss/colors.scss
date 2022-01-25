@@ -1,3 +1,4 @@
 $main-color: #53006e;
-$main-dark-color: #250032;
+$main-dark-color: darken($main-color, 12%);
+$main-darker-color: darken($main-dark-color, 3%);
 $secondary-color: #AC0282;
