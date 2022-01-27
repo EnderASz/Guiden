@@ -13,7 +13,10 @@ class Config:
     MONGO_PASS = environ.get('MONGO_PASS', "")
     MONGO_OPTS = environ.get('MONGO_OPTS', "")
 
+    # Home subapp
+    HOME_NEWS_LIMIT = 4
+    HOME_PREMIERES_LIMIT = 20
+
 
 class DevelopmentConfig(Config):
     TEMPLATES_AUTO_RELOAD = True
-
