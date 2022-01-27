@@ -14,6 +14,5 @@ def init(app: Flask):
             port=app.config.get('MONGO_PORT'),
             options="?"+app.config.get('MONGO_OPTS')))
 
-    if database_name := app.config.get('MONGO_DBNAME'):
-        global db
-        db = client[f"{database_name}"]
+    global db
+    db = client[f"{app.config.get('MONGO_DBNAME')}"]
