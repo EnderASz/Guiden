@@ -1,4 +1,4 @@
-from os import environ
+from os import environ, path
 
 
 class Config:
@@ -12,6 +12,8 @@ class Config:
     MONGO_USER = environ.get('MONGO_USER', "")
     MONGO_PASS = environ.get('MONGO_PASS', "")
     MONGO_OPTS = environ.get('MONGO_OPTS', "")
+
+    PUBLIC_MEDIA_ROOT = path.join(path.dirname(__file__), 'media', 'public')
 
     # Home subapp
     HOME_NEWS_LIMIT = 4

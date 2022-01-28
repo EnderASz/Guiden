@@ -8,6 +8,8 @@ from sassutils.wsgi import SassMiddleware
 from .default_configs import Config, DevelopmentConfig
 from . import mongo
 
+from .media import media_blueprint
+
 from .subapps import subapps_blueprint
 
 
@@ -33,6 +35,7 @@ def create_app():
 
     mongo.init(app)
 
+    app.register_blueprint(media_blueprint, url_prefix='/media')
     app.register_blueprint(subapps_blueprint)
 
     return app

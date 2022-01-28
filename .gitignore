@@ -5,6 +5,7 @@ run.*
 
 *.scss.css
 *.scss.css.map
+media/
 
 *.js
 *.js.map
