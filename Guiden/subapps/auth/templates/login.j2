@@ -1,0 +1,20 @@
+{# Home page template extending 'base.j2' template #}
+
+{% extends 'base.j2' %}
+
+{# Here put any app speficic css styling #}
+{% block app_speficic_styling %}
+{% endblock app_speficic_styling %}
+
+{# Here put any page specific css styling #}
+{% block page_specific_styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth-login.scss.css')}}">
+{% endblock page_specific_styling %}
+
+{# Here put page content #}
+{% block content %}
+
+{% endblock content %}
+
+{% block page_specific_scripts %}
+{% endblock page_specific_scripts %}
