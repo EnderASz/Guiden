@@ -1,6 +1,164 @@
 @import 'colors.scss';
 
 
+$arrow-size: 2em;
+
+$premieres-padding: 2em;
+$premieres-inner-padding: 1em;
+$premiere-tile-width: 9.84375em;
+$premiere-tile-height: 14em;
+
+article:is(.news, .premieres) {
+    width: 100%;
+    position: relative;
+    margin-bottom: 2em;
+    &:last-of-type{
+        margin-bottom: 1em;
+    }
+    .wrapper {
+        position: relative;
+        overflow: hidden;
+        .container {
+            width: 100%;
+            overflow: hidden;
+            ul.roll {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                transition: left ease 0.5s;
+                list-style-type: none;
+                li.tile{
+                    display: inline-block;
+                    position: relative;
+                    overflow: hidden;
+                    .overlap{
+                        width: 100%;
+                        position: absolute;
+                        background-color: rgba(0, 0, 0, 0.8);
+                        .title a{
+                            text-decoration: none;
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.news{
+        background-color: $main-darker-color;
+
+        .wrapper>.container {
+            height: 25em;
+            margin: 0 auto;
+            @media screen and (min-width:1100px) {
+                width: 80%;
+            }
+        }
+        ul.roll{
+            height: 100%;
+
+            >li.tile{
+                height: 100%;
+                margin: 0;
+                text-align: center;
+
+                .banner{
+                    max-width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                .overlap{
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                    transition: bottom ease 0.4s;
+                    text-align: left;
+
+
+                    .title{
+                        max-width: 100%;
+                        margin: 0.5em;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        font-size: 1.2rem;
+                    }
+                    .description{
+                        margin: 0.5em;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+    &.premieres{
+        >.wrapper{
+            width: 100%;
+            height: $premiere-tile-height;
+            background-color: $main-darker-color;
+
+            .container-padding{
+                padding: 0 $arrow-size+$premieres-padding+$premieres-inner-padding;
+                .container{
+                    position: relative;
+                    ul.roll li.tile{
+                        width: $premiere-tile-width;
+                        height: $premiere-tile-height;
+                        margin: 0;
+                        &:hover{
+                            >.overlap{
+                                bottom: 0;
+                            }
+                        }
+
+                        .poster{
+                            max-width: 100%;
+                            max-height: 100%;
+                        }
+                        .overlap{
+                            height: $premiere-tile-height/4;
+                            bottom: -$premiere-tile-height/4;
+                            transition: bottom ease 0.4s;
+
+                            .title{
+                                max-width: 100%;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                margin: 0;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .btn{
+        position: absolute;
+        width: $arrow-size;
+        height: $arrow-size;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        background-color: green;
+        &.left{
+            left: $premieres-padding;
+        }
+        &.right{
+            right: $premieres-padding;
+        }
+    }
+}
+
 main{
     width: 85%;
     margin: 0 auto;
@@ -10,61 +168,6 @@ main{
         border-radius: 1.5em;
         background-color: #{$main-dark-color};
         box-shadow: 0px 0px 25px 5px #{$main-dark-color};
-        &.news{
-            article{
-                width: 100%;
-                position: relative;
-                &.news{
-                    background-color: $main-darker-color;
-
-                    .container {
-                        @media screen and (min-width:1100px) {
-                            width: 80%;
-                        }
-                        width: 100%;
-                        height: 25em;
-                        margin: 0 auto;
-                        background-color: red; // To remove
-
-                        .message-box {
-                            width: 100%;
-                            height: 20%;
-                            position: absolute;
-                            bottom: 0;
-                            background-color: rgba(0, 0, 0, 0.61);
-                        }
-                    }
-                }
-                &.premieres{
-                    .wrapper{
-                        width: 100%;
-                        height: 20em;
-                        background-color: $main-darker-color;
-                    }
-                }
-
-                .wrapper {
-                    position: relative;
-                    overflow: hidden;
-                }
-                .btn{
-                    position: absolute;
-                    width: 2em;
-                    height: 2em;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    cursor: pointer;
-                    background-color: green;
-                    &.left{
-                        left: 2em;
-                    }
-                    &.right{
-                        right: 2em;
-                    }
-                }
-            }
-        }
-
         h2{
             margin: 0;
             margin-bottom: 0.5em;
@@ -74,12 +177,6 @@ main{
         h3{
             margin: 0 0 0.5em 0.8em;
             font-size: 1.8em;
-        }
-        >article {
-            margin-bottom: 2em;
-            &:last-of-type{
-                margin-bottom: 1em;
-            }
         }
     }
 }
