@@ -6,11 +6,12 @@ from Guiden import mongo
 
 def home():
     context = dict()
-    context['news'] = mongo.db.news \
+    context['news_list'] = mongo.db.news \
         .find() \
+        .sort('created_at', pymongo.DESCENDING) \
         .sort('edited_at', pymongo.DESCENDING) \
         .limit(current_app.config['HOME_NEWS_LIMIT'])
-    context['premieres'] = mongo.db.anime \
+    context['premiere_list'] = mongo.db.anime \
         .find() \
         .sort('premiere_date', pymongo.DESCENDING) \
         .limit(current_app.config['HOME_PREMIERES_LIMIT'])

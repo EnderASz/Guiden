@@ -14,15 +14,41 @@
     <section class="news">
         <h2>News</h2>
         <article class="news">
-        <div class="wrapper container">
-            <div class="message-box"></div>
-        </div>
-        <img src="" class="btn left">
-        <img src="" class="btn right">
+            <div class="wrapper">
+                <div class="container">
+                    <ul class="roll">
+                        {% for news in news_list -%}
+                            <li class="tile">
+                                <a href=""><img class="banner" src="{{url_for('media.public', filename=news.banner_path)}}"></a>
+                                <div class="overlap">
+                                    <h4 class="title"><a href="">{{news.title}}</a></h4>
+                                    <p class="description">{{news.description}}</p>
+                                </div>
+                            </li>
+                        {%- endfor %}
+                    </ul>
+                </div>
+            </div>
+            <img src="" class="btn left">
+            <img src="" class="btn right">
         </article>
         <article class="premieres">
-            <h3>Premieres</h3>
+            <h3>Latest premieres</h3>
             <div class="wrapper">
+                <div class="container-padding">
+                    <div class="container">
+                        <ul class="roll">
+                            {% for anime in premiere_list -%}
+                                <li class="tile">
+                                    <a href=""><img class="poster" src="{{url_for('media.public', filename=anime.poster_path)}}"></a>
+                                    <div class="overlap">
+                                        <h4 class="title"><a href="">{{anime.title}}</a></h4>
+                                    </div>
+                                </li>
+                            {%- endfor %}
+                        </ul>
+                    </div>
+                </div>
                 <img src="" class="btn left">
                 <img src="" class="btn right">
             </div>
@@ -30,3 +56,7 @@
     </section>
 </main>
 {% endblock content %}
+
+{% block page_specifi_scripts %}
+<script src="{{ url_for('static', filename='js/home/sizing.js') }}" defer></script>
+{% endblock page_specifi_scripts %}

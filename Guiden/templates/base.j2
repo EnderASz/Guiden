@@ -24,8 +24,12 @@
 <body>
     {% include 'nav.j2' %}
     {% block content %}
-
     {% endblock content %}
-    <script src="{{ url_for('static', filename='js/animation.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/nav/animation.js') }}"></script>
+    {% block app_specific_scripts %}
+    {% endblock app_specific_scripts %}
+    {% block page_specifi_scripts %}
+    {% endblock page_specifi_scripts %}
 </body>
 </html>
