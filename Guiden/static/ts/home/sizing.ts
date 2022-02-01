@@ -52,14 +52,27 @@ function update_premieres_appearance(move: number=0): void {
     const container_width = get_width(premieres_container);
 
     let fit = Math.floor(container_width / tile_width);
+    console.log("dupa")
+    console.log(fit);
+    console.log(premieres_tiles.length)
+    console.log(start_premiere + fit)
+    if(move==0 && start_premiere + fit > premieres_tiles.length) {
+        start_premiere = premieres_tiles.length - fit;
+    }
 
-    if(start_premiere + fit > premieres_tiles.length - fit)
-        start_premiere = 0;
     if(premieres_tiles.length > fit) {
         var margin_size = (container_width - fit*tile_width) / (2*fit);
         for(let i = 0; i < Math.abs(move); i++) {
             if(move > 0) {
-                start_premiere = Math.min(start_premiere + fit, premieres_tiles.length - fit);
+                if(start_premiere == premieres_tiles.length - fit) {
+                    start_premiere = 0;
+                    continue;
+                }
+                if(start_premiere + fit > premieres_tiles.length - fit) {
+                    start_premiere = premieres_tiles.length - fit;
+                    continue;
+                }
+                start_premiere += fit;
             }
             if(move<0) {
                 if(start_premiere == 0) {
