@@ -44,7 +44,7 @@ function update_news_appearance(): void {
     news_roll.style.transition = '';
 }
 
-function update_premieres_appearance(): void {
+function update_premieres_appearance(move: number=0): void {
     premieres_roll.style.transition = 'none';
 
     const tile_width = get_width(premieres_tiles[0]);
@@ -52,14 +52,32 @@ function update_premieres_appearance(): void {
     const container_width = get_width(premieres_container);
 
     let fit = Math.floor(container_width / tile_width);
-    let margin_size =
-    premieres_tiles.length >= fit
-        ? (container_width - fit*tile_width) / (2*fit)
-        : (container_width - premieres_tiles.length*tile_width) / (2*premieres_tiles.length);
 
-    if(start_premiere+fit > premieres_tiles.length) start_premiere = 0;
-    if(premieres_tiles.length-fit < start_premiere || start_premiere < 0) start_premiere = premieres_tiles.length-fit;
-
+    if(start_premiere + fit > premieres_tiles.length - fit)
+        start_premiere = 0;
+    if(premieres_tiles.length > fit) {
+        var margin_size = (container_width - fit*tile_width) / (2*fit);
+        for(let i = 0; i < Math.abs(move); i++) {
+            if(move > 0) {
+                start_premiere = Math.min(start_premiere + fit, premieres_tiles.length - fit);
+            }
+            if(move<0) {
+                if(start_premiere == 0) {
+                    start_premiere = premieres_tiles.length-fit;
+                    continue;
+                }
+                if(start_premiere < fit) {
+                    start_premiere = 0
+                    continue;
+                }
+                start_premiere -= fit;
+                continue;
+            }
+        }
+    } else {
+        var margin_size = (container_width - premieres_tiles.length*tile_width) / (2*premieres_tiles.length);
+        start_premiere = 0;
+    }
 
     premieres_tiles.forEach(tile => tile.style.margin = `0 ${margin_size}px`);
 
@@ -73,7 +91,7 @@ window.addEventListener("load", () => {
     update_news_appearance();
     update_premieres_appearance();
 })
-window.addEventListener("resize", update_premieres_appearance);
+window.addEventListener("resize", ()=>{update_premieres_appearance()});
 window.addEventListener("resize", update_news_appearance);
 left_btn_news.addEventListener("click", ()=>{
     current_news--;
@@ -84,10 +102,8 @@ right_btn_news.addEventListener("click", ()=>{
     update_news_appearance();
 })
 left_btn_premieres.addEventListener("click", ()=>{
-    start_premiere--;
-    update_premieres_appearance();
+    update_premieres_appearance(-1);
 })
 right_btn_premieres.addEventListener("click", ()=>{
-    start_premiere++;
-    update_premieres_appearance();
+    update_premieres_appearance(1);
 })
