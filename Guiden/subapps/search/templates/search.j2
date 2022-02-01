@@ -1,20 +1,18 @@
-{# Home page template extending 'base.j2' template #}
+{# Search page template extending 'base.j2' template #}
 
 {% extends 'base.j2' %}
 
 {# Here put any page specific css styling #}
 {% block page_specific_styling %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/home.scss.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/search.scss.css') }}">
 {% endblock page_specific_styling %}
 
 {# Here put page content #}
 {% block content %}
-{% include "components/header.j2" %}
 <main>
-    {% include "components/news.j2" %}
 </main>
 {% endblock content %}
 
+{# Here put page specific scripts #}
 {% block page_specific_scripts %}
-<script src="{{ url_for('static', filename='js/home/sizing.js') }}" defer></script>
 {% endblock page_specific_scripts %}
