@@ -9,10 +9,10 @@ const news_container: HTMLDivElement = news_wrapper.querySelector(`.container`)!
 const news_roll: HTMLUListElement = news_container.querySelector('.roll')!;
 const news_tiles: NodeListOf<HTMLLIElement> = news_wrapper.querySelectorAll(`.tile`)!
 
-const left_btn_news = news_article.querySelector(`.btn.left`)!;
-const right_btn_news = news_article.querySelector(`.btn.right`)!;
-const left_btn_premieres = premieres_wrapper.querySelector(`.btn.left`)!;
-const right_btn_premieres = premieres_wrapper.querySelector(`.btn.right`)!;
+const left_btn_news: NodeListOf<HTMLImageElement> = news_article.querySelectorAll(`.btn.left`)!;
+const right_btn_news: NodeListOf<HTMLImageElement> = news_article.querySelectorAll(`.btn.right`)!;
+const left_btn_premieres: HTMLImageElement = premieres_wrapper.querySelector(`.btn.left`)!;
+const right_btn_premieres: HTMLImageElement = premieres_wrapper.querySelector(`.btn.right`)!;
 
 let current_news = 0;
 let start_premiere = 0;
@@ -106,14 +106,18 @@ window.addEventListener("load", () => {
 })
 window.addEventListener("resize", ()=>{update_premieres_appearance()});
 window.addEventListener("resize", update_news_appearance);
-left_btn_news.addEventListener("click", ()=>{
-    current_news--;
-    update_news_appearance();
-})
-right_btn_news.addEventListener("click", ()=>{
-    current_news++;
-    update_news_appearance();
-})
+left_btn_news.forEach(
+    (e) => e.addEventListener("click", ()=>{
+        current_news--;
+        update_news_appearance();
+    })
+);
+right_btn_news.forEach(
+    (e) => e.addEventListener("click", ()=>{
+        current_news++;
+        update_news_appearance();
+    })
+);
 left_btn_premieres.addEventListener("click", ()=>{
     update_premieres_appearance(-1);
 })
