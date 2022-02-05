@@ -16,8 +16,10 @@
                 </ul>
             </div>
         </div>
-        <img src="" class="btn left">
-        <img src="" class="btn right">
+        <img src="{{ url_for('static', filename='img/arrowCircle.svg') }}" class="btn left">
+        <img src="{{ url_for('static', filename='img/arrowCircle.svg') }}" class="btn right">
+        <img src="{{ url_for('static', filename='img/arrowCircleAlt.svg') }}" class="btn left wide">
+        <img src="{{ url_for('static', filename='img/arrowCircleAlt.svg') }}" class="btn right wide">
     </article>
     <article class="premieres">
         <h3>Latest premieres</h3>
@@ -36,8 +38,8 @@
                     </ul>
                 </div>
             </div>
-            <img src="" class="btn left">
-            <img src="" class="btn right">
+            <img src="{{ url_for('static', filename='img/arrowCircleAlt.svg') }}" class="btn left">
+            <img src="{{ url_for('static', filename='img/arrowCircleAlt.svg') }}" class="btn right">
         </div>
     </article>
 </section>
