@@ -97,6 +97,18 @@ article:is(.news, .premieres) {
                 }
             }
         }
+
+        .btn {
+            &.wide{
+                display: none;
+            }
+            @media screen and (min-width: 1100px) {
+                display: none;
+                &.wide{
+                    display: initial;
+                }
+            }
+        }
     }
     &.premieres{
         >.wrapper{
@@ -149,12 +161,12 @@ article:is(.news, .premieres) {
         top: 50%;
         transform: translateY(-50%);
         cursor: pointer;
-        background-color: green;
         &.left{
             left: $premieres-padding;
         }
         &.right{
             right: $premieres-padding;
+            transform: scaleX(-1) translateY(-50%);
         }
     }
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="100mm"
+   height="100mm"
+   version="1.1"
+   viewBox="0 0 100 100"
+   id="svg8"
+   sodipodi:docname="arrowCircleAlt.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.1484167"
+     inkscape:cx="188.74365"
+     inkscape:cy="189.20911"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="41"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <g
+     transform="translate(-10.18 -8.6496)"
+     id="g6"
+     style="fill:#ffffff">
+    <path
+       transform="matrix(.26458 0 0 .26458 10.18 8.6496)"
+       d="m188.98 0a188.98 188.98 0 00-188.98 188.98 188.98 188.98 0 00188.98 188.98 188.98 188.98 0 00188.98-188.98 188.98 188.98 0 00-188.98-188.98zm0 30.236a158.74 160.63 0 01158.74 160.63 158.74 160.63 0 01-158.74 160.63 158.74 160.63 0 01-158.74-160.63 158.74 160.63 0 01158.74-160.63z"
+       id="path2"
+       style="fill:#ffffff" />
+    <path
+       d="m68.301 23.965-38.121 34.998 25 22.951 13.126 12.051 11.874-15.573v-.0021l-3.4106-3.0329-18.437-16.394 21.844-19.423z"
+       stroke-width=".26458"
+       id="path4"
+       style="fill:#ffffff" />
+  </g>
+</svg>
