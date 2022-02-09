@@ -1,0 +1,25 @@
+@import 'colors.scss';
+
+
+main{
+    width: 95%;
+    margin: 0 auto;
+    >section{
+        height: 10em;
+        width: 100%;
+        padding: 1em 0;
+        border-radius: 1.5em;
+        background-color: #{$main-dark-color};
+        box-shadow: 0px 0px 25px 5px #{$main-dark-color};
+        h2{
+            margin: 0;
+            margin-bottom: 0.5em;
+            font-size: 2.2em;
+            text-align: center;
+        }
+        h3{
+            margin: 0 0 0.5em 0.8em;
+            font-size: 1.8em;
+        }
+    }
+}
