@@ -1,0 +1,37 @@
+{# Home page template extending 'base.j2' template #}
+
+{% extends 'base.j2' %}
+
+{# Here put any app speficic css styling #}
+{% block app_speficic_styling %}
+{% endblock app_speficic_styling %}
+
+{# Here put any page specific css styling #}
+{% block page_specific_styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth-login.scss.css')}}">
+{% endblock page_specific_styling %}
+
+{# Here put page content #}
+{% block content %}
+<div class="main">
+    <div class="formdiv">
+    <h2>Login</h2>
+        <form>
+            <label for="login">Login</label>
+            <input type="text" class="login" name="login">
+            <label for="password">Password</label>
+            <input type="password" class="pass" name="pass">
+            <input type="checkbox" class="check" name="check"> 
+            <span>Remember me</span>
+            <a href="#">Forget password?</a>
+            <button>Login</button>
+        </form>
+    </div>
+    <div class="image">
+        <img src="{{ url_for('static', filename='img/login-poster.jpg') }}">
+    </div>
+</div>
+{% endblock content %}
+
+{% block page_specific_scripts %}
+{% endblock page_specific_scripts %}
