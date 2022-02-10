@@ -5,8 +5,8 @@ $arrow-size: 2em;
 
 $premieres-padding: 2em;
 $premieres-inner-padding: 1em;
-$premiere-tile-width: 9.84375em;
-$premiere-tile-height: 14em;
+$premiere-tile-width: 11em;
+$premiere-tile-height: 15em;
 
 article:is(.news, .premieres) {
     width: 100%;
@@ -149,7 +149,7 @@ article:is(.news, .premieres) {
                                 transform: translate(-50%, -50%);
                                 margin: 0;
                                 text-align: center;
-                                font-size: 0.9rem;
+                                font-size: 1rem;
                             }
                         }
                     }
