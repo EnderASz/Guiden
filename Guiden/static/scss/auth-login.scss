@@ -1,43 +1,67 @@
 @import "colors.scss";
 
-input[type="text"], input[type="password"]{
-    margin-bottom: 30px;
-    padding: 0.4em 0.7em;
-    font-size: 1.1rem;
-}
 
-.main{
+main{
     width: 80%;
     display: flex;
     margin: auto;
-    border-radius: 50px;
-    overflow: hidden;
-    box-shadow: 0px 0px 25px 5px #{$main-dark-color};
-    background-color: $main-dark-color;
 
-    .formdiv, .image{
+    section{
         width: 50%;
+        padding: 0;
 
-        .login, .pass{
-            display: block;
-            width: 100%;
-            border-radius: 1em;
-            color: #d3d3d3;
+        h2{
             background-color: $main-darker-color;
-            &::placeholder {
-                color: $placeholder-color;
-            }
-        }
-
-        .options{
-            display: flex;
-            justify-content: space-between;
+            padding: 0.5em 0;
         }
 
         form{
             max-width: 22em;
             width: 80%;
             margin: 2.5em auto;
+
+            label{
+                display: block;
+                margin-bottom: 0.2em;
+                font-size: 1.5rem;
+            }
+
+            .login, .pass{
+                width: 100%;
+                display: block;
+                margin-bottom: 2em;
+                padding: 0.4em 0.7em;
+                border-radius: 1em;
+                font-size: 1.1rem;
+                color: #d3d3d3;
+                background-color: $main-darker-color;
+                &::placeholder {
+                    color: $placeholder-color;
+                }
+            }
+
+            .options{
+                display: flex;
+                justify-content: space-between;
+            }
+
+            a{
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .submit{
+                margin-top: 5em;
+                padding: 0.7em;
+                border-radius: 1.8em;
+                text-align: center;
+                font-size: 1.3rem;
+                cursor: pointer;
+                color: white;
+                background-color: $secondary-color;
+            }
         }
 
         img{
@@ -45,43 +69,6 @@ input[type="text"], input[type="password"]{
             max-width: 100%;
             object-fit: cover;
             object-position: center;
-        }
-
-        h2{
-            margin: 0;
-            font-size: 2.2rem;
-            text-align: center;
-            background-color: $main-darker-color;
-            padding: 0.5em 0;
-        }
-
-        a{
-            text-decoration: none;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-
-        label{
-            display: block;
-            margin-bottom: 0.2em;
-            font-size: 1.5rem;
-        }
-
-        .submit{
-            width: 100%;
-            display: flex;
-            margin-top: 5em;
-            padding: 0.7em;
-            border-radius: 1.8em;
-            flex-direction: column;
-            justify-content: center;
-            align-content: center;
-            text-align: center;
-            font-size: 1.3rem;
-            cursor: pointer;
-            color: white;
-            background-color: $secondary-color;
         }
     }
 }

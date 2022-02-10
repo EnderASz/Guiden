@@ -16,4 +16,3 @@ search_blueprint.add_url_rule(
 search_blueprint.add_url_rule(
     '/<int:page>',
     view_func=search_page_view)
-

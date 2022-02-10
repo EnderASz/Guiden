@@ -13,7 +13,31 @@
 
 {# Here put page content #}
 {% block content %}
-<div class="main">
+<main class="backgrounded">
+    <section class="form">
+    <h2>Login</h2>
+        <form>
+            <label for="login">Login</label>
+            <input type="text" class="login" name="login" placeholder="Username...">
+            <label for="password">Password</label>
+            <input type="password" class="pass" name="pass" placeholder="Password...">
+            <div class="options">
+                <div class="remember">
+                    <input type="checkbox" class="check" name="check">
+                    <span>Remember me</span>
+                </div>
+                <div class="forget">
+                    <a href="#">Forget password?</a>
+                </div>
+            </div>
+            <div class="submit">Login</div>
+        </form>
+    </section>
+    <section class="poster">
+        <img src="{{ url_for('static', filename='img/login-poster.jpg') }}">
+    </section>
+</main>
+{# <div class="main">
     <div class="formdiv">
     <h2>Login</h2>
         <form>
@@ -36,7 +60,7 @@
     <div class="image">
         <img src="{{ url_for('static', filename='img/login-poster.jpg') }}">
     </div>
-</div>
+</div> #}
 {% endblock content %}
 
 {% block page_specific_scripts %}
